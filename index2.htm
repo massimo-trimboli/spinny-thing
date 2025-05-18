@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+        </nav>
+        <script src="js/makeHeader.js"></script>
+    </header>
+
+    <main>
+        <h3>
+            <form onsubmit="return false">
+                <label for="number">number of boxes:</label>
+                <input type="number" value="25" id="number">
+                <p></p>
+                <label for="scale">scale:</label>
+                <input type="range" value="90" id="scale">
+                <label for="spin">spin:</label>
+                <input type="range" value="0" id="spin" >
+            </form>
+        </h3>
+        <div class="box init"></div>
+    </main>
+</body>
+
+<script src="js/script2.js"></script>
+</html>

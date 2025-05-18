@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+        </nav>
+        <script src="js/makeHeader.js"></script>
+    </header>
+
+    <main>
+        <h3>
+            <form onsubmit="return false">
+                <label for="number">number of boxes:</label>
+                <input type="number" value="25" id="number">
+                <p></p>
+                <label for="scale">scale:</label>
+                <input type="range" value="90" id="scale">
+                <button onclick="spin(event)">spin</button>
+                <label for="nb-color">nb of colors:</label>
+                <input type="number" value="2" id="nb-color">
+            </form>
+        </h3>
+        <!-- colors -->
+        <h3>
+            <form onsubmit="return false" id="colors">
+                <label for="color-1">color-1:</label>
+                <input type="color" id="color-1">
+            </form>
+        </h3>
+        <div class="box init"></div>
+    </main>
+</body>
+
+<script>
+    let nb = document.getElementById("nb-color");
+    document.getElementById("nb-color").addEventListener("change",generateInput);
+
+    generateInput();
+
+
+    function generateInput(){
+        if(nb.value<1){nb.value=1;}
+        colorForm = document.getElementById("colors");
+
+        // reset and keep color 1
+        let label1 = document.querySelector('#colors label:first-of-type');
+        let input1 = document.querySelector('#colors input:first-of-type');
+        
+        colorForm.innerHTML = "";
+        colorForm.appendChild(label1);
+        colorForm.appendChild(input1);
+
+        for(let i=1; i<=nb.value; i++){
+            if(i>1){
+                let label = document.createElement("label");
+                label.setAttribute("for", `color-${i}`);
+                label.innerHTML= `  color-${i}`;
+                colorForm.appendChild(label);
+
+                let input = document.createElement("input");
+                input.setAttribute("type", "color");
+                input.id= `color-${i}`;
+                colorForm.appendChild(input);
+
+            }
+        }
+    }
+</script>
+
+<script src="js/script3.js"></script>
+</html>

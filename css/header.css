@@ -1,0 +1,24 @@
+header{
+    /* background-color: rgb(220, 220, 220); */
+    width: 100%;
+    min-height: 4rem;
+    border: 3px dotted black;
+    margin-bottom: 25px;
+}
+header nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+header nav a{
+    background-color: rgb(189, 189, 189);
+    padding: 0 7px;
+    margin: 8px;
+}
+.current-tab{
+    background-color: rgb(121, 121, 121);
+    box-shadow: 5px -6px 3px black;
+    position: relative;
+    top: 3px;
+}
